@@ -16,6 +16,9 @@ int main()
 
     std::vector<Block> wave = data::generateWave(countBlock, window);
 
+    Clock logic;
+    Time timePerFrame = seconds(1.0f / 60.0f);
+    Time accumulate = Time::Zero;
 
     while (window.isOpen())
     {
@@ -26,6 +29,12 @@ int main()
             {
                 window.close();
             }
+        }
+        accumulate += logic.restart();
+        while (accumulate >= timePerFrame)
+        {
+            accumulate -= timePerFrame;
+            data::moveWave(wave);
         }
 
         window.clear(Color::Black);
