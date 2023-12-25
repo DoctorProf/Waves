@@ -139,7 +139,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Modules\Cell.cppm" />
+    <ClCompile Include="Modules\Block.cppm" />
+    <ClCompile Include="Modules\Data.cppm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="openal32.dll" />
