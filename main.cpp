@@ -9,7 +9,7 @@ using namespace sf;
 
 int main() 
 {
-    double countBlock = 1000.0f;
+    double countBlock = 3000.0f;
 
     RenderWindow window(VideoMode(1920, 1080), "Waves", sf::Style::Default); 
     window.setVerticalSyncEnabled(true);
@@ -17,7 +17,7 @@ int main()
     std::vector<Block> wave = data::generateWave(countBlock, window);
 
     Clock logic;
-    Time timePerFrame = seconds(1.0f / 60.0f);
+    Time timePerFrame = seconds(1.0f / 240.0f);
     Time accumulate = Time::Zero;
 
     while (window.isOpen())
@@ -48,7 +48,7 @@ int main()
             data::moveWave(wave);
         }
 
-        window.clear(Color::Color(127, 127, 127));
+        window.clear(Color::Color(170, 170, 170));
 
         data::drawWave(wave, window);
 
