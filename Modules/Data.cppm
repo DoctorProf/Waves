@@ -18,14 +18,6 @@ namespace data
         }
         wave[0].setFixed(true);
         wave[countBlock - 1].setFixed(true);
-        for (int i = countBlock * 0.2; i < countBlock * 0.3; i++) 
-        {
-            wave[i].setMass(2);
-        }
-        for (int i = countBlock * 0.5; i < countBlock * 0.7; i++)
-        {
-            wave[i].setMass(4);
-        }
         return wave;
     }
     export void drawWave(std::vector<Block>& wave, RenderWindow& window)

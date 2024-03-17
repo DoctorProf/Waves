@@ -9,15 +9,15 @@ using namespace sf;
 
 int main() 
 {
-    double countBlock = 3000.0f;
+    double countBlock = 1920.0f;
 
-    RenderWindow window(VideoMode(1920, 1080), "Waves", sf::Style::Default); 
+    RenderWindow window(VideoMode(1920, 1080), "Waves", sf::Style::Fullscreen); 
     window.setVerticalSyncEnabled(true);
 
     std::vector<Block> wave = data::generateWave(countBlock, window);
 
     Clock logic;
-    Time timePerFrame = seconds(1.0f / 240.0f);
+    Time timePerFrame = seconds(1.0f / 60.0f);
     Time accumulate = Time::Zero;
 
     while (window.isOpen())
@@ -25,7 +25,7 @@ int main()
         Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == Event::Closed)
+            if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) 
             {
                 window.close();
             }
